@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Age Calculator</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+<body>
+	<div class="mb-4">
+	<div> Date Of Birth:        <input type="date" id="dob" placeholder="DD-MM_YYYY"></div><br> 
+	<div> Date Of Matriculation:<input type="date" id="dom" placeholder="DD-MM_YYYY"></div><br>
+	<div> Date Of Intermediate: <input type="date" id="doi" placeholder="DD-MM_YYYY"></div><br>
+	<div> Date of Graduation:   <input type="date" id="dog" placeholder="DD-MM_YYYY"></div><br>
+	</div>
+	<div>
+	<input type="submit" value="DONE" onClick="verify()">
+	</div>
+	<script type="text/javascript">
+		function verify(){
+			var mv=0,iv=0,gv=0
+				var b=parseInt(document.getElementById("dob").value)
+				var m=parseInt(document.getElementById("dom").value)
+				var i=parseInt(document.getElementById("doi").value)
+				var g=parseInt(document.getElementById("dog").value)
+
+			if(m-b<16 || m-b>13)
+				mv=1
+			if(i-b<19 || i-b>14)
+				iv=1
+			if(g-b<24 || g-b>18)
+				gv=1	
+			if(mv==1 && iv==1 && gv==1)	
+				alert("Date of birth is verified")
+			else
+				window.location="https://accounts.google.com/ServiceLogin/signinchooser?flowName=GlifWebSignIn&flowEntry=ServiceLogin"
+				//window.location="C:\xampp\htdocs\age calcy\DOB.html"
+				//document.write("123")
+		}
+	</script>
+	
+</body>
+</html>
